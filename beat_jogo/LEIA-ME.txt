@@ -1,0 +1,90 @@
+BEAT: FREQUÊNCIA PERDIDA — 4 FASES · V1.19
+Desenvolvimento e conceito: Gabriela e Gustavo
+
+COMO ABRIR
+Extraia beat-final-gustavo-js-unico.zip. Abra o index.html dentro da pasta
+beat-final-gustavo-js-unico. Mantenha jogo.js, imgs, audio, fonts, vendor e
+3d_objects no mesmo lugar. Na tela inicial, confira "4 FASES · 3 GÊNEROS · V1.19".
+O jogo funciona localmente no navegador; o modelo 3D opcional do menu pode
+precisar de internet. As fases compartilham o mesmo quadro responsivo.
+
+HISTÓRIA E CONTROLES
+1. Fugindo do silêncio: sobreviva durante 30 s nos 4 canos.
+2. Recuperando o ritmo: colete 5 notas em 30 s.
+3. Consertando o sistema: repita as sequências de 4, 5 e 6 sinais.
+4. No palco: pressione ← ↓ ↑ → (ou A S W D) no ritmo durante 30 s.
+Depois da fase 4, o GIF animado de agradecimento aparece e permanece até
+escolher Tentar novamente ou Voltar ao menu.
+O menu usa a arte de fundo de Gustavo, sem a figura extra do Beat.
+O som dos passos nos canos termina ao concluir a fase 1.
+P ou Esc pausa. Botões de toque aparecem nas fases com movimento e ritmo.
+Cada introdução dura 6 s; Começar permite adiantar a introdução. Nas passagens entre fases, Beat caminha e o cenário desliza conforme
+a transição de Gustavo. Há opção de voltar ao menu durante o jogo.
+
+MÚSICA ESCOLHIDA
+Rock usa Supercombo — A Transmissão, trecho local de 1:00 a 1:34.
+Pop usa Charli xcx — 360, trecho local de 1:46 ao final em 2:18.
+Eletrônica usa FNX, Soul Shine — Just a Bit of Rave: na coleta, notas
+a partir de 3:12; na fase do palco, faixa a partir de 6:12.
+A escolha de gênero vale na fase 2, nos sinais da fase 3 e na fase 4.
+Os arquivos recortados e aprovados ficam em audio/; o material bruto
+adicional do ZIP do Gustavo não é necessário para executar a partida.
+Nenhum nome de música ou duração aparece na partida. Os títulos constam
+somente em Saiba mais, pelos créditos.
+
+FASES 1 E 2
+A fase 1 usa o cenário de escadas enviado por Gustavo, os 4 canos, as ondas
+com símbolo de silêncio e som de vento. As ondas novas miram o cano no qual
+Beat está quando surgem. Uma troca de cano antecipa a próxima onda; pares
+de ondas podem chegar pelos 2 lados após um impacto. A lentidão de 3 s é
+mantida sem aviso na tela. Saltos, passos audíveis pelos 4 canos e sprites de
+dano recebidos do Gustavo são usados durante os movimentos. Ao perder 3
+tentativas, o modal permanece
+até a escolha de Tentar novamente ou Ir para o Menu.
+A coleta da fase 2 mantém 5 notas em movimento, com a nota 3 central e
+mais lenta. A música é ouvida brevemente conforme Beat se aproxima, em
+volume baixo; capturar a 1ª nota não inicia a reprodução contínua da faixa.
+Acabar o tempo consome uma tentativa. Ao esgotar as 3, retorna à fase 1.
+
+FASES 3 E 4
+A fase 3 traz o novo cenário de cortina do Gustavo. O indicador de circuito
+fica abaixo dos blocos 01, 02 e 03, o status fica centralizado e Observar
+frequência tem destaque em azul. Os sinais são curtos: bateria para Rock,
+notas sintetizadas para Pop e Eletrônica. Nenhuma faixa completa toca
+quando se observa ou repete a sequência. Cada sinal, inclusive o último,
+permanece aceso e audível pelo mesmo tempo. Ao perder as 3 tentativas,
+Tentar novamente reinicia tudo na fase 1; Desisto... menu volta ao início.
+A fase 4 usa a nova arte Beat Festival, as setas e os efeitos do Gustavo.
+Acertos no tempo certo ampliam e iluminam a seta, com as 4 cores das notas
+da central musical. As palmas ambiente do Gustavo tocam na fase 3 com
+volume reduzido. A fase 4 traz a música escolhida sem palmas adicionais.
+Depois da breve entrada no show, a música escolhida toca por 30 s, com
+notas de ritmo geradas a partir do andamento de cada gênero. Errar 40% das
+notas ou 6 seguidas permite tentar a fase 4 novamente ou sair ao menu.
+O último trecho das setas acelera moderadamente em 2 passos. A porcentagem de
+erros aparece no resultado tanto ao vencer quanto ao perder.
+Após os 30 s, a música termina, o resultado aparece e a arte animada de
+agradecimento é mostrada, com Tentar novamente e Voltar ao menu.
+
+EFEITOS E PROGRESSO
+Abaixo de 10 s nas fases 1, 2 e 4, o relógio fica vermelho e emite
+tiques secos de relógio, acelerando nos últimos 3 s. Ao perder uma
+tentativa, o contador pisca em vermelho e volta à cor da fase.
+O som acompanha o botão Som e a pausa. Nas fases 1, 2 e 3, 1 fragmento volta em cada, até 3/3. Não há pontuação. Os trechos musicais continuam surpreendendo
+quem joga: a escolha inicial mostra só os gêneros.
+
+ESTRUTURA
+index.html e style.css: telas e layout originais do Gustavo.
+jogo.js: os 18 scripts locais reunidos na ordem original, com comentários
+que identificam cada fase e o nome anterior de cada trecho.
+GUIA-DO-CODIGO.md: referência rápida para localizar cada parte em jogo.js.
+imgs/, audio/, fonts/ e 3d_objects/: artes, sons, fontes e modelo originais.
+vendor/: cópia da biblioteca externa fornecida pelo Gustavo, preservada.
+O HTML continua carregando model-viewer como módulo externo para o modelo 3D.
+Para abrir, mantenha todo o conteúdo desta pasta junto com index.html.
+Para publicar no GitHub Pages, envie o conteúdo extraído, não só o ZIP.
+
+VERIFICAÇÕES DESTA ENTREGA
+Sintaxe do JavaScript, ordem dos 18 trechos, inicialização das fases e
+integridade do ZIP conferidas. Transição e arquivos de mídia originais
+preservados sem alterações. Faça também o teste no navegador antes de publicar.
