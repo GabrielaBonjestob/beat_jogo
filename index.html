@@ -11,13 +11,11 @@
   <link rel="apple-touch-icon" href="imgs/beat.png">
   <link rel="stylesheet" href="style.css">
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-  <!-- As fases e os sons estão reunidos no arquivo JavaScript do jogo. -->
   <script src="jogo.js" defer></script>
 </head>
 
 <body>
   <main class="palco-jogo" aria-label="Jogo Beat: Frequência Perdida">
-    <!-- Cenário e interface são camadas independentes. -->
     <img class="cenario" src="imgs/cenario-gustavo.jpg" alt="" aria-hidden="true" draggable="false">
     <div class="camada-atmosfera" aria-hidden="true"></div>
 
@@ -45,7 +43,6 @@
       <button class="botao-menu" type="button" data-acao="creditos">Saiba mais</button>
     </nav>
 
-    <span class="identificacao-versao">4 FASES · 3 GÊNEROS · V1.19</span>
     <dialog id="escolher-genero" class="janela-menu janela-genero" aria-labelledby="titulo-genero">
       <div class="conteudo-janela">
         <span class="etiqueta-janela">A TRILHA DE BEAT</span>
@@ -58,13 +55,18 @@
         <button id="cancelar-genero" class="botao-voltar" type="button">Voltar ao menu</button>
       </div>
     </dialog>
+    
     <section id="tela-ondas" class="tela-fase tela-ondas" hidden aria-label="Fase 1 — Fugindo do silêncio">
       <header class="painel-fase">
+        
         <div><span class="etiqueta-fase">FASE 01</span>
           <h1>Fugindo do silêncio</h1>
         </div>
+        
         <div class="placar-fase"><span id="tentativas-ondas">Tentativas: 3/3</span><span
-            id="fragmentos-ondas">Fragmentos: 0/3</span><strong id="tempo-ondas" role="timer">30 s</strong></div>
+            id="fragmentos-ondas">Fragmentos: 0/3</span><strong id="tempo-ondas" role="timer">30 s</strong>
+        </div>
+        
       </header>
       <canvas id="canvas-ondas" width="960" height="720" tabindex="0"
         aria-label="Caminhe pelos canos com esquerda e direita. Use cima, W ou Espaço para pular e baixo ou S para descer do cano. Desvie das ondas durante 30 segundos."></canvas>
@@ -80,34 +82,41 @@
           <button id="comecar-ondas" type="button">Começar</button>
         </div>
       </div>
+      
       <div id="resultado-ondas" class="resultado-fase" hidden>
         <div class="cartao-resultado" role="dialog" aria-modal="true" aria-labelledby="titulo-resultado-ondas">
           <span class="etiqueta-fase">FASE 01</span>
-          <h2 id="titulo-resultado-ondas">Você perdeu suas 3 tentativas :/</h2>
+          <h2 id="titulo-resultado-ondas">Você perdeu suas 3 tentativas :|</h2>
           <div><button id="tentar-ondas" type="button">Tentar novamente</button><button id="sair-ondas" type="button">Ir
               para o Menu</button></div>
         </div>
       </div>
+      
       <footer class="rodape-fase rodape-controles">
         <div><button id="som-ondas" type="button" aria-pressed="true">Som ligado</button><button id="pausa-ondas"
             type="button">Pausar</button><button id="menu-ondas" type="button">Menu</button></div>
       </footer>
-      <nav class="controles-toque" aria-label="Movimento no celular">
+      
+      <nav class="controles-toque" aria-label="Movimento no celular"> 
         <button type="button" data-direcao="cima" aria-label="Pular">↑</button><button type="button"
           data-direcao="esquerda" aria-label="Mover para esquerda">←</button><button type="button" data-direcao="baixo"
           aria-label="Descer do cano">↓</button><button type="button" data-direcao="direita"
           aria-label="Mover para direita">→</button>
       </nav>
     </section>
+    
     <section id="tela-fase" class="tela-fase" hidden aria-label="Fase 2 — Recuperando o ritmo">
+      
       <header class="painel-fase">
         <div><span class="etiqueta-fase">FASE 02</span>
           <h1>Recuperando o ritmo</h1>
         </div>
+        
         <div class="placar-fase"><span id="contador-notas">Notas: 0/5</span><span id="contador-fragmentos">Fragmentos:
             1/3</span><span id="tentativas-notas">Tentativas: 3/3</span><strong id="contador-tempo" role="timer">30
             s</strong></div>
       </header>
+      
       <canvas id="canvas-fase" width="960" height="720" tabindex="0"
         aria-label="Use as setas ou WASD para mover Beat e alcançar 5 notas musicais. Você tem 30 segundos, seja rápido!"></canvas>
       <div id="apresentacao-notas" class="apresentacao-fase" hidden>
@@ -118,22 +127,24 @@
           <div class="texto-apresentacao" id="texto-apresentacao-notas">
             <p>Pegue as 5 notas musicais que se movem pela cidade.</p>
             <p>Você tem 30 segundos, seja rápido!</p>
-            <p>Use as setas ← → / ↓ ↑ para mover o Beat</p>
           </div>
           <button id="comecar-notas" type="button">Começar</button>
         </div>
       </div>
       <div id="aviso-fase" class="aviso-fase" role="status"></div>
+      
       <footer class="rodape-fase rodape-controles">
         <div><button id="botao-som" type="button" aria-pressed="true">Som ligado</button><button id="botao-pausa"
             type="button">Pausar</button><button id="botao-menu" type="button">Menu</button></div>
       </footer>
+      
       <nav class="controles-toque" aria-label="Movimento no celular">
         <button type="button" data-direcao="cima" aria-label="Mover para cima">↑</button>
         <button type="button" data-direcao="esquerda" aria-label="Mover para esquerda">←</button>
         <button type="button" data-direcao="baixo" aria-label="Mover para baixo">↓</button>
         <button type="button" data-direcao="direita" aria-label="Mover para direita">→</button>
       </nav>
+      
       <div id="resultado-fase" class="resultado-fase" hidden>
         <div class="cartao-resultado" role="dialog" aria-modal="true" aria-labelledby="titulo-resultado" tabindex="-1">
           <span class="etiqueta-fase">BEAT / FREQUÊNCIA PERDIDA</span>
@@ -144,9 +155,11 @@
         </div>
       </div>
     </section>
+    
     <section id="tela-fase2" class="tela-fase tela-fase-dois" hidden aria-label="Fase 3 — Consertando o sistema">
       <img class="fundo-fase2" src="imgs/cenario_fase3.png" alt="" aria-hidden="true">
       <div class="atmosfera-fase2" aria-hidden="true"></div>
+      
       <header class="painel-fase">
         <div><span class="etiqueta-fase">FASE 03</span>
           <h1>Consertando o sistema</h1>
@@ -154,12 +167,15 @@
         <div class="placar-fase"><span id="tentativas-fase2">Tentativas: 3/3</span><span
             id="fragmentos-fase2">Fragmentos: 2/3</span></div>
       </header>
+      
       <div class="beat-fase2" role="img" aria-label="Beat ao lado da central musical">
         <div class="corpo-beat"><img src="imgs/beat.png" alt=""><svg class="sorriso-beat" viewBox="0 0 16 8"
             aria-hidden="true">
-            <path d="M0 0h3v3h3v2h4V3h3V0h3v5h-3v2H3V5H0z" /></svg></div>
+            <path d="M0 0h3v3h3v2h4V3h3V0h3v5h-3v2H3V5H0z" /></svg>
+        </div>
         <span class="fala-beat" aria-hidden="true"></span>
       </div>
+      
       <aside class="painel-missao" aria-label="Missão e progresso da restauração">
         <div class="circuitos-sistema" aria-label="Circuitos restaurados"><span data-circuito="0">01</span><span
             data-circuito="1">02</span><span data-circuito="2">03</span><strong id="rodada-fase2">Circuito 1/3 · 4
@@ -176,6 +192,7 @@
         </div>
         <button id="iniciar-sequencia" class="iniciar-sequencia" type="button">Observar frequência</button>
       </aside>
+      
       <div class="console-sistema">
         <img class="arte-central" src="imgs/central-musical.png"
           alt="Central de som com 3 módulos empilhados, monitor rachado, botões e equalizador">
@@ -203,10 +220,12 @@
         </div>
         <div class="equalizador-monitor" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
       </div>
+      
       <footer class="rodape-fase rodape-controles">
         <div><button id="som-fase2" type="button" aria-pressed="true">Som ligado</button><button id="pausa-fase2"
             type="button">Pausar</button><button id="menu-fase2" type="button">Menu</button></div>
       </footer>
+      
       <div id="aviso-fase2" class="aviso-fase" role="status"></div>
       <div id="apresentacao-fase3" class="apresentacao-fase" hidden>
         <div class="cartao-apresentacao" role="dialog" aria-labelledby="titulo-apresentacao-fase3"
@@ -220,6 +239,7 @@
           <button id="comecar-fase3" type="button">Começar</button>
         </div>
       </div>
+      
       <div id="resultado-fase2" class="resultado-fase" hidden>
         <div class="cartao-resultado" role="dialog" aria-modal="true" aria-labelledby="titulo-resultado-fase2">
           <span class="etiqueta-fase">BEAT / FREQUÊNCIA PERDIDA</span>
@@ -230,6 +250,7 @@
         </div>
       </div>
     </section>
+    
     <section id="transicao-fase" class="tela-fase transicao-fase" hidden aria-label="Caminho para a fase 2">
       <div class="cenarios-transicao" aria-hidden="true">
         <div class="cena-transicao cena-origem"><img class="cenario-transicao" src="imgs/fundo-fase1-gustavo.png"
@@ -240,6 +261,7 @@
               alt=""></div>
         </div>
       </div>
+      
       <div class="abertura-show" aria-hidden="true">
         <img class="fundo-show-transicao" src="imgs/show.png" alt="">
         <div class="metade-cenario metade-cenario-esquerda"><img src="imgs/cenario_fase3.png" alt=""></div>
@@ -251,15 +273,18 @@
         <p>Vamos seguir para a fase 2 e restaurar o sistema de som.</p><strong>FASE 02 · CONSERTANDO O SISTEMA</strong>
       </div>
       <div class="beat-transicao beat-caminhando" aria-hidden="true"><img src="imgs/passo0.png" alt=""></div>
+      
       <footer class="rodape-fase">
         <p id="estado-transicao" role="status">Beat está a caminho da central musical...</p>
         <div><button id="pausar-transicao" type="button">Pausar</button><button id="menu-transicao" type="button"
             hidden>Voltar ao menu</button></div>
       </footer>
+      
     </section>
     <section id="tela-show" class="tela-fase tela-show" hidden aria-label="Fase 4 — Frequência no palco">
       <canvas id="canvas-show" width="960" height="720" tabindex="0"
         aria-label="Pressione as setas quando alcançarem a linha de marcação."></canvas>
+      
       <div class="painel-show"><span class="etiqueta-fase">FASE 04 · NO PALCO</span><strong id="tempo-show"
           role="timer">30 s</strong></div>
       <div id="apresentacao-show" class="apresentacao-fase" hidden>
@@ -274,6 +299,7 @@
           <button id="comecar-show" type="button">Começar</button>
         </div>
       </div>
+      
       <div id="resultado-show" class="resultado-fase" hidden>
         <div class="cartao-resultado" role="dialog" aria-modal="true" aria-labelledby="titulo-resultado-show">
           <span class="etiqueta-fase">FASE 04</span>
@@ -284,21 +310,25 @@
               type="button">Ir para o Menu</button></div>
         </div>
       </div>
+      
       <footer class="rodape-fase rodape-controles">
         <p id="estado-show" class="somente-leitores" role="status">Aguardando Beat no palco...</p>
         <div><button id="som-show" type="button" aria-pressed="true">Som ligado</button><button id="pausa-show"
             type="button">Pausar</button><button id="menu-show" type="button">Menu</button></div>
       </footer>
+      
       <nav class="controles-show" aria-label="Setas de ritmo no celular">
         <button type="button" data-seta="esquerda" aria-label="Esquerda">←</button><button type="button"
           data-seta="baixo" aria-label="Baixo">↓</button><button type="button" data-seta="cima"
           aria-label="Cima">↑</button><button type="button" data-seta="direita" aria-label="Direita">→</button>
       </nav>
     </section>
+    
     <section id="tela-final" class="tela-fase tela-final" hidden
       aria-label="Mensagem de agradecimento após concluir o jogo">
       <img class="arte-agradecimento" src="imgs/tv-gustavo.png"
         alt="Parabéns! Sua jornada acabou por enquanto. Muito obrigado por jogar.">
+      
       <footer class="rodape-fase">
         <div><button id="recomecar-final" type="button">Tentar novamente</button><button id="menu-final"
             type="button">Voltar ao menu</button></div>
@@ -306,7 +336,7 @@
     </section>
   </main>
 
-  <!-- Diálogo acessível: fecha com Voltar, Escape ou clique fora. -->
+  <!-- Tela final - Agradecimento Beat -->
   <dialog class="janela-menu" id="janela-menu" aria-labelledby="titulo-janela">
     <div class="conteudo-janela">
       <span class="etiqueta-janela">BEAT / FREQUÊNCIA PERDIDA</span>
